@@ -1,10 +1,10 @@
 from flask import render_template
 from app import app
-<<<<<<< HEAD
+
 from app import mongo
-=======
+
 from app.forms import LoginForm
->>>>>>> e2e73dc0264279f7ddb5719fa1fd05b1fd4ba19c
+#>>>>>>> e2e73dc0264279f7ddb5719fa1fd05b1fd4ba19c
 
 @app.route('/')
 @app.route('/index')
@@ -21,14 +21,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-<<<<<<< HEAD
-    return render_template('index.html', title='Home', user='Sam', posts=posts)
-#def index():
- #   user = {'username': 'Sam'}
-  #  return render_template('index.html', title='Home', user=user)
-
-=======
-    return render_template('index.html', title='Home', user=user, posts=posts)
+    return render_template('index.html', title='Home', user='sam', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -38,4 +31,4 @@ def login():
             form.username.data, form.remember_me.data))
         return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
->>>>>>> e2e73dc0264279f7ddb5719fa1fd05b1fd4ba19c
+#>>>>>>> e2e73dc0264279f7ddb5719fa1fd05b1fd4ba19c`
