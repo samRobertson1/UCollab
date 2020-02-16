@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
 from app.models import User
 
@@ -45,4 +45,5 @@ class EditProfileForm(FlaskForm):
 class PostForm(FlaskForm):
     #TODO title of the post, description, and majors they're looking for
     post = TextAreaField('Project Description', validators=[DataRequired(), Length(min=1, max=140)])
+    majors = SelectField('Majors', choices=[('1', 'arts'), ('1', 'Engineering'), ('1', 'Weak Sience'), ('1', 'Computer Science')])
     submit = SubmitField('Submit')
