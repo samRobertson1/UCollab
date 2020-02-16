@@ -1,3 +1,5 @@
+flask-sqlalchemy
+flask-migrate
 flask-wtf
 flask
 virtualenv
