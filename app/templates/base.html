@@ -35,6 +35,11 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
             <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+	    {% if current_user.is_anonymous %}
+	    <a href="{{ url_for('login') }}">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">My Profile</a>
