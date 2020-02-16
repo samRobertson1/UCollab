@@ -1,10 +1,13 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block content %}
 
-{% block content %}
-<div class="container-fluid index-content">
-  <h1>Hi, {{ user.username }}!</h1>
-  {% for post in posts %}
-    <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
-  {% endfor %}
-</div>
+<section id="posts">
+  <div class="container-fluid">
+    <h2>Let's Collab</h2>
+    {% for post in posts %}
+    <div class="card">
+      <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
 {% endblock %}
