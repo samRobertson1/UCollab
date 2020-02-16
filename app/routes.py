@@ -8,7 +8,6 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm
 
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
-@login_required
 def index():
     form = PostForm()
     if form.validate_on_submit():
@@ -18,8 +17,9 @@ def index():
         flash('Your project is now live!')
         return redirect(url_for('index'))
     #TODO sketchy way of getting posts
-    posts = User.new_projects()
-    return render_template("index.html", title='Home Page', form=form, posts=posts)
+    posts = reversed(User.new_projects())
+    return render_template("index.html", title='Home Page', form=form,
+                           posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
