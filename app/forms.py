@@ -44,5 +44,5 @@ class EditProfileForm(FlaskForm):
             
 class PostForm(FlaskForm):
     #TODO title of the post, description, and majors they're looking for
-    post = TextAreaField('Project Description', validators=[DataRequired(), Length(min=1, max=140)])
+    post = TextAreaField('Project Description', validators=[DataRequired(), Length(min=1, max=500)])
     submit = SubmitField('Submit')
