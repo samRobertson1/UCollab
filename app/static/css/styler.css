@@ -19,3 +19,13 @@
 .card p {
   padding: 3px;
 }
+
+.login-box {
+  width: 300px;
+  margin: 5% auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 1%;
+  text-shadow: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+ }
