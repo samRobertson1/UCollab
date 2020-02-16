@@ -7,7 +7,7 @@ html {
 }
 
 nav {
-  background-color: #d70808ff;
+  background-color: #ff4949;
 }
 
 .nav-img {
@@ -55,3 +55,7 @@ textarea {
    padding-left: 20px;
  }
 
+ body > ul > li {
+   text-align: center;
+   color: #00FF00;
+ }
