@@ -1,9 +1,13 @@
+html {
+  font-family: Arial;
+}
+
 .container-fluid {
   padding: 7% 15%;
 }
 
 nav {
-  background-color: #ff4949;
+  background-color: #d70808ff;
 }
 
 .card {
@@ -22,6 +26,8 @@ nav {
   padding: 3px;
 }
 
+/* Login Page  */
+
 .login-box {
   width: 300px;
   margin: 5% auto;
@@ -30,4 +36,13 @@ nav {
   text-shadow: none;
   padding-top: 15px;
   padding-bottom: 15px;
+ }
+
+ /* Profile Page */
+ .profile-img {
+   border-radius: 100%;
+ }
+
+ .user-info {
+   padding-left: 20px;
  }
