@@ -63,7 +63,7 @@ def register():
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
     #TODO should replaace this with a list of posts by the user
-    posts = User.my_projects(current_user)
+    posts = User.my_projects(user)
     #posts = [
      #   {'author': user, 'body': 'Test post #1'},
       #  {'author': user, 'body': 'Test post #2'}
