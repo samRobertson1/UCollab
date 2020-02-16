@@ -8,7 +8,6 @@ from app.forms import LoginForm, RegistrationForm
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
     user = {'username' : 'sam'}
     posts = [
