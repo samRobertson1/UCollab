@@ -1,16 +1,13 @@
 from flask import render_template
 from app import app
 
-from app import mongo
-
 from app.forms import LoginForm
 #>>>>>>> e2e73dc0264279f7ddb5719fa1fd05b1fd4ba19c
 
 @app.route('/')
 @app.route('/index')
 def index():
-    user_collection = mongo.db.users
-    user_collection.insert({'name' : 'Sam'})
+    user = {'username' : 'sam'}
     posts = [
         {
             'author': {'username': 'John'},
@@ -21,7 +18,7 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html', title='Home', user='sam', posts=posts)
+    return render_template('index.html', title='Home', user=user, posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
