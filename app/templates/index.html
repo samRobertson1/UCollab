@@ -2,7 +2,7 @@
 
 <section id="posts">
   <div class="container-fluid">
-    <h2>Let's Collab</h2>
+    <h2>Let's Collab{% if not current_user.is_anonymous %}, {{ current_user.username }} {% endif %}</h2>
     {% for post in posts %}
     <div class="card">
       <p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
