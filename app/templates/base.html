@@ -20,11 +20,14 @@
     {% else %}
     <title>Welcome to UCollab</title>
     {% endif %}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='images/favicon-96x96.png') }}">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="{{ url_for('index') }}">UCollab</a>
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img class="nav-img" src="{{ url_for('static', filename='images/logo.png') }}" alt="">
+        UCollab
+      </a>
       <button
         class="navbar-toggler"
         type="button"
