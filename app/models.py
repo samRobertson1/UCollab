@@ -28,7 +28,7 @@ class User(UserMixin, db.Model):
         return 'https://www.gravatar.com/avatar/{}?d=retro&s={}'.format(digest, size)
 
     #this method is in place of followed_posts                                                                               
-    def new_projects():                                                                                                               return Post.query.all()#.orderby(Post.timestamp.desc())#TODO if this doesn't work do all except by yourself
+    def new_projects():                                                                                                               return Post.query.all()#.orderby(Post.timestamp.desc())
 
 #TODO change this to be a project or a thread post
 class Post(db.Model):
