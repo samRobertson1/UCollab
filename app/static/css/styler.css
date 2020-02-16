@@ -2,13 +2,15 @@
   padding: 7% 15%;
 }
 
+nav {
+  background-color: #ff4949;
+}
+
 .card {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 1%;
-  text-shadow: none;
   padding-top: 15px;
   padding-bottom: 15px;
-
   margin-bottom: 20px;
 }
 
