@@ -62,10 +62,12 @@ def register():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test post #1'},
-        {'author': user, 'body': 'Test post #2'}
-    ]
+    #TODO should replaace this with a list of posts by the user
+    posts = User.my_projects(current_user)
+    #posts = [
+     #   {'author': user, 'body': 'Test post #1'},
+      #  {'author': user, 'body': 'Test post #2'}
+      #]
     return render_template('user.html', user=user, posts=posts)
 
 @app.before_request
@@ -81,6 +83,7 @@ def edit_profile():
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
+        current_user.major = form.major.data
         db.session.commit()
         flash('Your changes have been saved.')
         return redirect(url_for('edit_profile'))

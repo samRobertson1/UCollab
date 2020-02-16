@@ -11,6 +11,7 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     about_me = db.Column(db.String(140))
+    major = db.Column(db.String(64))
     last_seen = db.Column(db.DateTime, default=datetime.utcnow)
     posts = db.relationship('Post', backref='author', lazy='dynamic')
     
@@ -28,14 +29,17 @@ class User(UserMixin, db.Model):
         return 'https://www.gravatar.com/avatar/{}?d=retro&s={}'.format(digest, size)
 
     #this method is in place of followed_posts                                                                               
-    def new_projects():                                                                                                               return Post.query.all()#.orderby(Post.timestamp.desc())
+    def new_projects():                                                                                                               return Post.query.all()
+    #will need to insert this method into the view profile page
+    def my_projects(user):
+        return user.posts.all()#.filter(user_id == user.id)
 
 #TODO change this to be a project or a thread post
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.String(500))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user_id = db.Column('user_id', db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
