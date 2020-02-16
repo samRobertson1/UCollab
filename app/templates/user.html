@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block content %}
@@ -18,3 +19,11 @@
     {% include '_post.html' %}
 {% endfor %}
 {% endblock %}
+=======
+{% extends "base.html" %} {% block content %}
+<h1>User: {{ user.username }}</h1>
+<hr />
+{% for post in posts %}
+<p>{{ post.author.username }} says: <b>{{ post.body }}</b></p>
+{% endfor %} {% endblock %}
+>>>>>>> 9d821256077dae77fa07d2acc1d6e91388e285ea
