@@ -2,7 +2,7 @@
 
 • A full stack web application that provides a platform for interdisciplinary collaboration between students and faculty.
 
-• Created using Python, Flask, SQL Alchemy, HTML, CSS.
+• Created using Python, Flask, SQL Alchemy, HTML, and CSS.
 
 • Created for Calgary Hacks 2020.
 
