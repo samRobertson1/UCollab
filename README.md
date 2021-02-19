@@ -4,7 +4,7 @@
 
 • Created using Python, Flask, SQL Alchemy, HTML, and CSS.
 
-• Created for Calgary Hacks 2020.
+• Created for Calgary Hacks 2020 under a 24-hour time constraint.
 
 
 ![display1](https://user-images.githubusercontent.com/46468236/77016866-85173180-693e-11ea-81b7-02b2b1913fd8.png)
